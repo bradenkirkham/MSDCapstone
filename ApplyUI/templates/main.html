@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+    <link
+            rel="stylesheet"
+            href="{{url_for('static', filename='css/style.css')}}"
+    />
+
+
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <form action="/upload_data" method="post" class="center" enctype="multipart/form-data">
+        <header style="text-align: center">Please upload your resume and provide the URL for the job posting you are interested in.</header>
+
+        <div class="inner">
+            <input type="file" id="user-file" name="user-file" accept=".doc, .docx" style="align-content: center"/>
+            <br/>
+            <br/>
+            <label for="job-URL">URL:</label>
+            <input type="text" id="job-URL" name="job-URL" style="align-content: center"/>
+            <br/>
+            <br/>
+            <input type="submit" id="run" name="run" style="align-content: center"/>
+        </div>
+    </form>
+
+    <div class="grid-container" style= "visibility:{{visibility}}">
+        <div class="child">
+            <div>
+                <ul>
+                    {% for x in range(0,5) %}
+                    <li>{{job_data[x][0]}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="child">
+            <div>
+                <ul>
+                    {% for x in range(5,10) %}
+                    <li>{{job_data[x][0]}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

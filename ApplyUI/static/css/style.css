@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /*display: flex;*/
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+
+form {
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    margin: auto;
+    width: 75%;
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+.inner {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+    /*border: 1px solid #000000;*/
+
+}
+
+.child{
+    margin: auto;
+    width: 20%;
+    /*border: 1px solid #000000;*/
+}
